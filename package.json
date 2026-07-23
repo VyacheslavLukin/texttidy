@@ -1,0 +1,36 @@
+{
+  "name": "texttidy",
+  "version": "0.8.0",
+  "private": true,
+  "type": "module",
+  "description": "Fast, private, client-side text tools hub — dependency-free static site.",
+  "keywords": [
+    "text-tools",
+    "privacy",
+    "no-dependencies",
+    "vanilla-js",
+    "static-site"
+  ],
+  "homepage": "https://texttidy.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VyacheslavLukin/texttidy.git"
+  },
+  "bugs": "https://github.com/VyacheslavLukin/texttidy/issues",
+  "license": "MIT",
+  "author": "Vyacheslav Lukin",
+  "scripts": {
+    "build": "node build.js",
+    "test": "node --test --experimental-test-coverage --test-coverage-lines=100 --test-coverage-branches=100 --test-coverage-functions=100",
+    "lint": "biome ci --error-on-warnings .",
+    "format": "biome check --write .",
+    "preview": "node build.js && (cd dist && python3 -m http.server 8787)",
+    "prepare": "git config core.hooksPath .githooks || true"
+  },
+  "engines": {
+    "node": ">=22.8"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.2"
+  }
+}

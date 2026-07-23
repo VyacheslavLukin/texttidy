@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="TextTidy — fast, private text tools">
+  <title>TextTidy — fast, private text tools</title>
+  <rect width="1200" height="630" fill="#0f1320"/>
+  <rect width="1200" height="12" fill="#2f6df6"/>
+  <!-- logo mark -->
+  <g transform="translate(92,236)">
+    <rect width="132" height="132" rx="28" fill="#2f6df6"/>
+    <g fill="#ffffff">
+      <rect x="33" y="39" width="66" height="13" rx="6.5"/>
+      <rect x="33" y="63" width="50" height="13" rx="6.5"/>
+      <rect x="33" y="87" width="60" height="13" rx="6.5"/>
+    </g>
+  </g>
+  <!-- wordmark -->
+  <text x="256" y="326" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="112" fill="#ffffff">Text<tspan fill="#5b8dff">Tidy</tspan></text>
+  <!-- tagline -->
+  <text x="94" y="452" font-family="Helvetica, Arial, sans-serif" font-weight="400" font-size="42" fill="#c3cad6">Fast, private text tools that just work.</text>
+  <!-- sub -->
+  <text x="94" y="510" font-family="Helvetica, Arial, sans-serif" font-weight="400" font-size="29" fill="#8a94a6">21 free tools · everything runs in your browser · no uploads</text>
+  <text x="94" y="572" font-family="Helvetica, Arial, sans-serif" font-weight="600" font-size="30" fill="#5b8dff">texttidy.app</text>
+</svg>

@@ -1,0 +1,16 @@
+#!/bin/sh
+# Pre-commit gate: keep the tree lint-clean and green before every commit.
+#
+# Enabled via `git config core.hooksPath .githooks`, which the "prepare" npm
+# script sets automatically on `npm install`. To run it manually once:
+#   git config core.hooksPath .githooks
+# To bypass in an emergency (use sparingly): git commit --no-verify
+set -e
+
+echo "▶ lint (biome, strict — warnings & notices fail)…"
+npm run --silent lint
+
+echo "▶ unit tests + 100% domain coverage…"
+npm test
+
+echo "✓ pre-commit checks passed"
