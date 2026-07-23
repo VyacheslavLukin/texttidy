@@ -5,6 +5,7 @@ your text never leaves your device, because there's no server to send it to.
 
 [![CI](https://github.com/VyacheslavLukin/texttidy/actions/workflows/ci.yml/badge.svg)](https://github.com/VyacheslavLukin/texttidy/actions/workflows/ci.yml)
 [![coverage](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FVyacheslavLukin%2Ftexttidy%2Fbadges%2Fcoverage.json)](https://github.com/VyacheslavLukin/texttidy/actions/workflows/ci.yml)
+[![latest release](https://img.shields.io/github/v/release/VyacheslavLukin/texttidy?sort=semver&color=blue)](https://github.com/VyacheslavLukin/texttidy/releases)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
 
 ![dependencies: 0](https://img.shields.io/badge/dependencies-0-brightgreen)

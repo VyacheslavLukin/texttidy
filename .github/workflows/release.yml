@@ -1,0 +1,44 @@
+name: Release
+
+# Auto semantic versioning on push to main — NO release PR.
+# semantic-release reads Conventional Commits since the last `v*` tag, bumps
+# package.json + CHANGELOG.md, commits them back with a `[skip ci]` marker, tags `v<x.y.z>`,
+# and publishes a GitHub Release with generated notes. semantic-release and its changelog/git
+# plugins are pulled via npx at run time, so nothing is added to the repo's devDependencies
+# (still just Biome).
+on:
+  push:
+    branches: [main]
+
+# Serialise releases so two quick merges can't race on the tag/commit-back.
+concurrency: release
+
+permissions:
+  contents: write # push the release commit + tag
+  issues: write # semantic-release/github may comment on released issues/PRs
+  pull-requests: write
+
+jobs:
+  release:
+    # Skip the bot's own release commit (belt-and-suspenders: GITHUB_TOKEN pushes don't
+    # retrigger workflows anyway) and any manual [skip ci] push.
+    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # full history so commit-analyzer sees every commit since the last tag
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Semantic release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >-
+          npx --yes
+          -p semantic-release@24
+          -p @semantic-release/changelog@6
+          -p @semantic-release/git@10
+          semantic-release
